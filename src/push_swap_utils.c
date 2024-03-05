@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 06:51:40 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/05 09:07:55 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,4 @@ void	print_stack(t_stack_node *stack)
 		ft_putstr_fd("\n", 1);
 		stack = stack->next;
 	}
-	ft_putstr_fd("\n", 1);
 }
