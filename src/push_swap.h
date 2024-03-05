@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 06:51:49 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:59:04 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 typedef struct s_stack_node
 {
 	int					data;
-	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }	t_stack_node;
 

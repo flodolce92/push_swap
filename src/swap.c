@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:21:31 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 05:45:27 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:00:11 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	swap(t_stack_node **stack)
 		return ;
 	first = *stack;
 	second = first->next;
-	first->prev = second;
 	first->next = second->next;
 	second->next = first;
-	second->prev = NULL;
 	*stack = second;
 }
