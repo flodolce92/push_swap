@@ -6,13 +6,13 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/02 12:21:34 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/05 06:42:33 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	check_single_arg(char *arg)
+static char	**check_single_arg(char *arg)
 {
 	int		i;
 	int		j;
@@ -36,7 +36,7 @@ static void	check_single_arg(char *arg)
 		}
 		i++;
 	}
-	free_matrix(nums);
+	return (nums);
 }
 
 static void	check_multiple_args(int argc, char **argv)
@@ -61,12 +61,16 @@ static void	check_multiple_args(int argc, char **argv)
 	}
 }
 
-void	check_args(int argc, char **argv)
+char	**check_args(int argc, char **argv)
 {
+	char	**nums;
+
+	nums = NULL;
 	if (argc < 2)
 		print_error("No arguments", 1);
 	if (argc == 2)
-		check_single_arg(argv[1]);
+		nums = check_single_arg(argv[1]);
 	else
 		check_multiple_args(argc, argv);
+	return (nums);
 }

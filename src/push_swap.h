@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/02 12:22:28 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/05 06:51:49 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ typedef struct s_stack_node
 
 void	free_matrix(char **matrix);
 void	print_error(char *msg, int exit_code);
-void	check_args(int argc, char **argv);
+char	**check_args(int argc, char **argv);
+int		stack_size(t_stack_node *stack);
+void	fill_stack(t_stack_node **stack_a, char **nums, char **argv);
+
+void	add_node(t_stack_node **stack, int number);
+void	print_stack(t_stack_node *stack);
+
+void	swap(t_stack_node **stack);
 
 #endif

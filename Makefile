@@ -6,15 +6,18 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/02 12:22:44 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/05 06:15:01 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS_DIR	=	src/
 
-SRC			=	push_swap.c \
-				check_args.c \
+SRC			=	check_args.c \
 				frees.c \
+				list_utils.c \
+				push_swap.c \
+				push_swap_utils.c \
+				swap.c
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 

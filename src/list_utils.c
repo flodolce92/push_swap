@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 06:52:56 by flo-dolc         ###   ########.fr       */
+/*   Created: 2024/03/05 05:49:09 by flo-dolc          #+#    #+#             */
+/*   Updated: 2024/03/05 06:19:46 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(char *msg, int exit_code)
+t_stack_node	*new_node(int number)
 {
-	ft_putstr_fd("Error: ", 2);
-	ft_putstr_fd(msg, 2);
-	ft_putstr_fd("\n", 2);
-	if (errno != 0)
-		perror("");
-	exit(exit_code);
+	t_stack_node	*new;
+
+	new = (t_stack_node *) malloc(sizeof(t_stack_node));
+	if (!new)
+		return (NULL);
+	new->data = number;
+	new->prev = NULL;
+	new->next = NULL;
+	return (new);
 }
 
-int	main(int argc, char **argv)
+void	add_node(t_stack_node **stack, int number)
 {
-	t_stack_node	*stack_a;
-	// t_stack_node	*stack_b;
-	char			**nums;
+	t_stack_node	*new;
 
-	stack_a = NULL;
-	// stack_b = NULL;
-	nums = check_args(argc, argv);
-	fill_stack(&stack_a, nums, argv);
-	print_stack(stack_a);
-	free_matrix(nums);
-	return (0);
+	new = new_node(number);
+	if (!stack)
+		return ;
+	if (*stack != NULL)
+	{
+		new->next = *stack;
+		(*stack)->prev = new;
+	}
+	*stack = new;
 }
