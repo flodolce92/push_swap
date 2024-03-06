@@ -6,16 +6,16 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 17:00:13 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:01:38 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_size(t_stack_node *stack)
+int	stack_size(t_stack *stack)
 {
 	int				size;
-	t_stack_node	*current;
+	t_stack	*current;
 
 	size = 0;
 	current = stack;
@@ -27,7 +27,7 @@ int	stack_size(t_stack_node *stack)
 	return (size);
 }
 
-void	fill_stack(t_stack_node **stack_a, char **nums, char **argv)
+void	fill_stack(t_stack **stack_a, char **nums, char **argv)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ void	fill_stack(t_stack_node **stack_a, char **nums, char **argv)
 	}
 }
 
-void	print_stack(t_stack_node *stack)
+void	print_stack(t_stack *stack)
 {
 	ft_putstr_fd("----Printing Stack (Top to Down)-------\n", 1);
 	while (stack)

@@ -6,17 +6,17 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:49:09 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 15:46:53 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:02:00 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node	*new_node(int number)
+t_stack	*new_node(int number)
 {
-	t_stack_node	*new;
+	t_stack	*new;
 
-	new = (t_stack_node *) malloc(sizeof(t_stack_node));
+	new = (t_stack *) malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->data = number;
@@ -24,9 +24,9 @@ t_stack_node	*new_node(int number)
 	return (new);
 }
 
-void	add_node_front(t_stack_node **stack, int number)
+void	add_node_front(t_stack **stack, int number)
 {
-	t_stack_node	*new;
+	t_stack	*new;
 
 	new = new_node(number);
 	if (!stack)
@@ -36,9 +36,9 @@ void	add_node_front(t_stack_node **stack, int number)
 	*stack = new;
 }
 
-void	add_node_back(t_stack_node **stack, int number)
+void	add_node_back(t_stack **stack, int number)
 {
-	t_stack_node	*p;
+	t_stack	*p;
 
 	if (!stack)
 		return ;
