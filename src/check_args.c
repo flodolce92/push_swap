@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/05 06:42:33 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:24:08 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,16 @@ static void	check_multiple_args(int argc, char **argv)
 	}
 }
 
-char	**check_args(int argc, char **argv)
+void	check_args(int argc, char **argv, t_ps *ps)
 {
-	char	**nums;
-
-	nums = NULL;
+	ps->args = NULL;
 	if (argc < 2)
 		print_error("No arguments", 1);
 	if (argc == 2)
-		nums = check_single_arg(argv[1]);
+		ps->args = check_single_arg(argv[1]);
 	else
+	{
+		ps->args = &argv[1];
 		check_multiple_args(argc, argv);
-	return (nums);
+	}
 }

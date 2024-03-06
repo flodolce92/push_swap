@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 15:59:06 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:22:53 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,16 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+typedef struct s_ps
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**args;
+}	t_ps;
+
 void	free_matrix(char **matrix);
 void	print_error(char *msg, int exit_code);
-char	**check_args(int argc, char **argv);
+void	check_args(int argc, char **argv, t_ps *ps);
 int		stack_size(t_stack *stack);
 void	fill_stack(t_stack **stack_a, char **nums, char **argv);
 

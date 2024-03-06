@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 16:01:38 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:07:53 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	stack_size(t_stack *stack)
 {
-	int				size;
+	int		size;
 	t_stack	*current;
 
 	size = 0;

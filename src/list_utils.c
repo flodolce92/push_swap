@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:49:09 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 16:02:00 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:10:00 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	add_node_front(t_stack **stack, int number)
 
 void	add_node_back(t_stack **stack, int number)
 {
-	t_stack	*p;
+	t_stack	*current;
 
 	if (!stack)
 		return ;
@@ -47,8 +47,8 @@ void	add_node_back(t_stack **stack, int number)
 		*stack = new_node(number);
 		return ;
 	}
-	p = *stack;
-	while (p->next)
-		p = p->next;
-	p->next = new_node(number);
+	current = *stack;
+	while (current->next)
+		current = current->next;
+	current->next = new_node(number);
 }

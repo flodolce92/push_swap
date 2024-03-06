@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 16:02:14 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/06 16:24:13 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ void	print_error(char *msg, int exit_code)
 
 int	main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	// t_stack	*stack_b;
-	char			**nums;
+	t_ps	ps;
 
-	stack_a = NULL;
-	// stack_b = NULL;
-	nums = check_args(argc, argv);
-	fill_stack(&stack_a, nums, argv);
-	print_stack(stack_a);
-	free_matrix(nums);
+	ps.stack_a = NULL;
+	ps.stack_b = NULL;
+	check_args(argc, argv, &ps);
+	fill_stack(&ps.stack_a, ps.args, argv);
+	print_stack(ps.stack_a);
+	if (argc == 2)
+		free_matrix(ps.args);
 	return (0);
 }
