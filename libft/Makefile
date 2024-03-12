@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/01/08 19:58:07 by flo-dolc          #+#    #+#              #
+#    Updated: 2024/03/12 03:27:13 by flo-dolc         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS		=	ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
@@ -58,25 +70,30 @@ RM			=	rm -f
 all:			$(NAME)
 
 $(OBJS_DIR):
-				mkdir -p $(OBJS_DIR)
+				@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o:	%.c | $(OBJS_DIR)
 				$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):		$(OBJS)
-				ar rc $(NAME) $(OBJS)
-				ranlib $(NAME)
+$(NAME):		$(OBJS_DIR) $(OBJS)
+				@make --no-print-directory -C ./ft_printf
+				@cp ./ft_printf/libftprintf.a $(NAME)
+				@ar rc $(NAME) $(OBJS)
+				@ranlib $(NAME)
 
 clean:
 				$(RM) $(OBJS)
 				$(RM) -r $(OBJS_DIR)
+				@make --no-print-directory -C ./ft_printf clean
 
 fclean:			clean
 				$(RM) $(NAME)
+				@make --no-print-directory -C ./ft_printf fclean
 
 re:				fclean all
 
 norm:
 				@norminette $(SRCS)
+				@make --no-print-directory -C ./ft_printf norm
 
 .PHONY:			all bonus clean fclean re norm
