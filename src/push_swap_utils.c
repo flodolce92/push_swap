@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 16:07:53 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/12 21:15:43 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,23 @@ void	fill_stack(t_stack **stack_a, char **nums, char **argv)
 
 void	print_stack(t_stack *stack)
 {
-	ft_putstr_fd("----Printing Stack (Top to Down)-------\n", 1);
+	if (stack == NULL)
+	{
+		ft_printf("Empty stack\n");
+		return ;
+	}
 	while (stack)
 	{
-		ft_putstr_fd("Data: ", 1);
-		ft_putnbr_fd(stack->data, 1);
-		ft_putstr_fd("\n", 1);
+		ft_printf("%d ", stack->data);
 		stack = stack->next;
 	}
+	ft_printf("\n");
+}
+
+void	print_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_printf("Stack A: ");
+	print_stack(stack_a);
+	ft_printf("Stack B: ");
+	print_stack(stack_b);
 }
