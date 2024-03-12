@@ -6,7 +6,7 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/12 16:34:39 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/12 19:09:56 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC			=	check_args.c \
 				push.c \
 				swap.c \
 				rotate.c \
+				reverse_rotate.c \
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 

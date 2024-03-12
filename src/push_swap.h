@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 16:45:30 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/12 19:12:28 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,22 @@ void	add_node_back(t_stack **stack, int data);
 void	print_stack(t_stack *stack);
 
 void	swap(t_stack **stack);
-void	sa(t_stack **stack_a);
-void	sb(t_stack **stack_b);
-void	ss(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
+
+void	push(t_stack **from, t_stack **to);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+
+void	rotate(t_stack **stack);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 
 #endif
