@@ -6,7 +6,7 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/05 06:15:01 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/12 16:34:39 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ SRC			=	check_args.c \
 				list_utils.c \
 				push_swap.c \
 				push_swap_utils.c \
-				swap.c
+				push.c \
+				swap.c \
+				rotate.c \
 
 SRCS		=	$(addprefix $(SRCS_DIR), $(SRC))
 
@@ -40,7 +42,7 @@ LIBFT_FLAGS	=	-Llibft -lft
 all:			$(NAME)
 
 $(OBJS_DIR):
-				mkdir -p $(OBJS_DIR)
+				@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o:	$(SRCS_DIR)%.c | $(OBJS_DIR)
 				$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
@@ -61,6 +63,6 @@ fclean:			clean
 re:				fclean all
 
 norm:
-				@norminette $(SRCS)
+				@norminette $(SRCS) $(SRCS_DIR)push_swap.h
 
 .PHONY:			all clean fclean re norm

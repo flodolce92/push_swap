@@ -1,46 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 05:21:31 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 15:26:55 by flo-dolc         ###   ########.fr       */
+/*   Created: 2024/03/12 16:49:32 by flo-dolc          #+#    #+#             */
+/*   Updated: 2024/03/12 17:04:01 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+void	rev_rotate(t_stack **stack)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*head;
+	t_stack	*last;
+	t_stack	*prev_last;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
+	head = *stack;
+	last = last_node(*stack);
+	prev_last = *stack;
+	while (prev_last->next != last)
+		prev_last = prev_last->next;
+	prev_last->next = NULL;
+	last->next = head;
+	*stack = last;
 }
 
-void	sa(t_stack **a)
+void	rra(t_stack **a)
 {
-	swap(a);
-	ft_printf("sa\n");
+	rev_rotate(a);
+	ft_printf("rra\n");
 }
 
-void	sb(t_stack **b)
+void	rrb(t_stack **b)
 {
-	swap(b);
-	ft_printf("sb\n");
+	rev_rotate(b);
+	ft_printf("rrb\n");
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	rev_rotate(a);
+	rev_rotate(b);
+	ft_printf("rrr\n");
 }
+

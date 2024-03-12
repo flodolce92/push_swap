@@ -1,46 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/05 05:21:31 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 15:26:55 by flo-dolc         ###   ########.fr       */
+/*   Created: 2024/03/12 16:34:54 by flo-dolc          #+#    #+#             */
+/*   Updated: 2024/03/12 16:48:44 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+void	rotate(t_stack **stack)
 {
-	t_stack	*first;
-	t_stack	*second;
+	t_stack	*head;
+	t_stack	*last;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return ;
-	first = *stack;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*stack = second;
+	head = *stack;
+	*stack = (*stack)->next;
+	last = last_node(*stack);
+	last->next = head;
+	head->next = NULL;
 }
 
-void	sa(t_stack **a)
+void	ra(t_stack **a)
 {
-	swap(a);
-	ft_printf("sa\n");
+	rotate(a);
+	ft_printf("ra\n");
 }
 
-void	sb(t_stack **b)
+void	rb(t_stack **b)
 {
-	swap(b);
-	ft_printf("sb\n");
+	rotate(b);
+	ft_printf("rb\n");
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-	swap(a);
-	swap(b);
-	ft_printf("ss\n");
+	rotate(a);
+	rotate(b);
+	ft_printf("rr\n");
 }
