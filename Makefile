@@ -6,7 +6,7 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/13 19:01:12 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/15 15:38:56 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(OBJS_DIR):
 				@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)%.o:	$(SRCS_DIR)%.c | $(OBJS_DIR)
-				$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
+				$(CC) $(CFLAGS) -g -c $< -o $@ $(INCLUDES)
 
 $(NAME):		$(OBJS_DIR) $(OBJS)
 				@make -C ./libft

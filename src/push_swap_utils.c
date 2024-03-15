@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 21:15:43 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:21:27 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	stack_size(t_stack *stack)
 	return (size);
 }
 
-void	fill_stack(t_stack **stack_a, char **nums, char **argv)
+void	fill_stack(t_stack **stack_a, char **nums)
 {
 	int	i;
 
@@ -37,15 +37,6 @@ void	fill_stack(t_stack **stack_a, char **nums, char **argv)
 		while (nums[i])
 		{
 			add_node_back(stack_a, ft_atoi(nums[i]));
-			i++;
-		}
-	}
-	else
-	{
-		i = 1;
-		while (argv[i])
-		{
-			add_node_back(stack_a, ft_atoi(argv[i]));
 			i++;
 		}
 	}

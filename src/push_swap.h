@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 21:17:12 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:17:02 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	free_matrix(char **matrix);
 void	print_error(char *msg, int exit_code);
 void	check_args(int argc, char **argv, t_ps *ps);
 int		stack_size(t_stack *stack);
-void	fill_stack(t_stack **stack_a, char **nums, char **argv);
+void	fill_stack(t_stack **stack_a, char **nums);
 
 t_stack	*new_node(int data);
 t_stack	*last_node(t_stack *stack);
