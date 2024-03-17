@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/15 18:17:02 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/17 13:38:10 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_ps
 }	t_ps;
 
 void	free_matrix(char **matrix);
+void	free_stack(t_stack *stack);
 void	print_error(char *msg, int exit_code);
 void	check_args(int argc, char **argv, t_ps *ps);
 int		stack_size(t_stack *stack);
@@ -66,5 +67,7 @@ void	reverse_rotate(t_stack **stack);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
+int		is_ordered(t_stack *stack);
 
 #endif

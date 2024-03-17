@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frees.c                                            :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 12:21:52 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/17 13:37:13 by flo-dolc         ###   ########.fr       */
+/*   Created: 2024/03/17 13:29:20 by flo-dolc          #+#    #+#             */
+/*   Updated: 2024/03/17 13:31:04 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_matrix(char **matrix)
-{
-	int	i;
-
-	i = 0;
-	if (!matrix)
-		return ;
-	while (matrix[i] != NULL)
-	{
-		free(matrix[i]);
-		i++;
-	}
-	free(matrix);
-}
-
-void	free_stack(t_stack *stack)
+int	is_ordered(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	while (stack)
+	tmp = stack;
+	while (tmp->next)
 	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
 	}
+	return (1);
 }
