@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/15 18:21:27 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:23:09 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,20 @@ void	fill_stack(t_stack **stack_a, char **nums)
 	int	i;
 
 	i = 0;
-	if (nums != NULL)
+	if (!nums)
+		return ;
+	while (nums[i])
 	{
-		while (nums[i])
+		// check_int_overflow(nums[i]);
+		if (check_duplicates(*stack_a, ft_atoi(nums[i])) == 1)
 		{
-			add_node_back(stack_a, ft_atoi(nums[i]));
-			i++;
+			// FIX INVALID FREE
+			free_matrix(nums);
+			free_stack(*stack_a);
+			print_error("Duplicate number", 1);
 		}
+		add_node_back(stack_a, ft_atoi(nums[i]));
+		i++;
 	}
 }
 

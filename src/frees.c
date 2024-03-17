@@ -6,11 +6,19 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 12:21:52 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/17 13:37:13 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/17 14:03:25 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_all(t_ps *ps, int argc)
+{
+	if (argc == 2)
+		free_matrix(ps->args);
+	free_stack(ps->stack_a);
+	free_stack(ps->stack_b);
+}
 
 void	free_matrix(char **matrix)
 {

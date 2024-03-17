@@ -6,11 +6,34 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/06 16:24:08 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/17 15:15:23 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void	check_int_overflow(char *arg)
+// {
+// 	long long int	num;
+
+// 	num = ft_atoll(arg);
+// 	if (num > INT_MAX || num < INT_MIN)
+// 		print_error("Integer overflow", 1);
+// }
+
+int	check_duplicates(t_stack *stack, int num)
+{
+	t_stack	*current;
+
+	current = stack;
+	while (current != NULL)
+	{
+		if (current->data == num)
+			return (1);
+		current = current->next;
+	}
+	return (0);
+}
 
 static char	**check_single_arg(char *arg)
 {
@@ -31,7 +54,10 @@ static char	**check_single_arg(char *arg)
 		{
 			if (!ft_isdigit(nums[i][j])
 				&& nums[i][j] != '-' && nums[i][j] != '+')
-				print_error("Invalid argument", 1);
+				{
+					free_matrix(nums);
+					print_error("Invalid argument", 1);
+				}
 			j++;
 		}
 		i++;
