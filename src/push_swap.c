@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/17 14:15:49 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/22 01:33:57 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,26 @@ void	print_error(char *msg, int exit_code)
 	exit(exit_code);
 }
 
+void	init_struct(t_ps *ps, int argc)
+{
+	ps->stack_a = NULL;
+	ps->stack_b = NULL;
+	ps->argc = argc;
+	ps->args = NULL;
+}
+
 int	main(int argc, char **argv)
 {
 	t_ps	ps;
 	int		size;
 
-	ps.stack_a = NULL;
-	ps.stack_b = NULL;
+	init_struct(&ps, argc);
 	check_args(argc, argv, &ps);
-	fill_stack(&ps.stack_a, ps.args);
+	fill_stack(&ps.stack_a, ps.args, &ps);
 	if(is_ordered(ps.stack_a))
 	{
 		ft_printf("Stack is already ordered\n");
-		free_all(&ps, argc);
+		free_all(&ps);
 		return (0);
 	}
 	size = stack_size(ps.stack_a);
@@ -46,6 +53,6 @@ int	main(int argc, char **argv)
 	// else
 	// 	sort(&ps.stack_a, &ps.stack_b);
 	print_stacks(ps.stack_a, ps.stack_b);
-	free_all(&ps, argc);
+	free_all(&ps);
 	return (0);
 }
