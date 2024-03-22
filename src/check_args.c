@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/17 15:15:23 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/22 02:09:14 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,27 @@ int	check_duplicates(t_stack *stack, int num)
 	return (0);
 }
 
+static int	is_valid_num(char *num)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strlen(num) == 0)
+		print_error("Empty argument", 1);
+	if (num[i] == '-' || num[i] == '+')
+		i++;
+	while (num[i] != '\0')
+	{
+		if (ft_isdigit(num[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 static char	**check_single_arg(char *arg)
 {
 	int		i;
-	int		j;
 	char	**nums;
 
 	i = 0;
@@ -47,18 +64,10 @@ static char	**check_single_arg(char *arg)
 	nums = ft_split(arg, ' ');
 	while (nums[i] != NULL)
 	{
-		j = 0;
-		if (ft_strlen(nums[i]) == 0)
-			print_error("Empty argument", 1);
-		while (nums[i][j] != '\0')
+		if (is_valid_num(nums[i]) == 0)
 		{
-			if (!ft_isdigit(nums[i][j])
-				&& nums[i][j] != '-' && nums[i][j] != '+')
-				{
-					free_matrix(nums);
-					print_error("Invalid argument", 1);
-				}
-			j++;
+			free_matrix(nums);
+			print_error("Invalid argument", 1);
 		}
 		i++;
 	}
@@ -68,21 +77,12 @@ static char	**check_single_arg(char *arg)
 static void	check_multiple_args(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
-		j = 0;
-		if (ft_strlen(argv[i]) == 0)
-			print_error("Empty argument", 1);
-		while (argv[i][j] != '\0')
-		{
-			if (ft_isdigit(argv[i][j]) == 0
-				&& argv[i][j] != '-' && argv[i][j] != '+')
-				print_error("Invalid argument", 1);
-			j++;
-		}
+		if (is_valid_num(argv[i]) == 0)
+			print_error("Invalid argument", 1);
 		i++;
 	}
 }
