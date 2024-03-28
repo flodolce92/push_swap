@@ -6,34 +6,11 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/22 02:09:14 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:42:17 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	check_int_overflow(char *arg)
-// {
-// 	long long int	num;
-
-// 	num = ft_atoll(arg);
-// 	if (num > INT_MAX || num < INT_MIN)
-// 		print_error("Integer overflow", 1);
-// }
-
-int	check_duplicates(t_stack *stack, int num)
-{
-	t_stack	*current;
-
-	current = stack;
-	while (current != NULL)
-	{
-		if (current->data == num)
-			return (1);
-		current = current->next;
-	}
-	return (0);
-}
 
 static int	is_valid_num(char *num)
 {

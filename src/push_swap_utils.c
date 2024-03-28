@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:22:48 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/22 01:34:24 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:28:03 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	fill_stack(t_stack **stack_a, char **nums, t_ps *ps)
 		return ;
 	while (nums[i])
 	{
-		// check_int_overflow(nums[i]);
+		check_int_overflow(nums[i]);
 		if (check_duplicates(*stack_a, ft_atoi(nums[i])) == 1)
 		{
 			free_all(ps);

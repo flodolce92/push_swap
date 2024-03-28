@@ -6,13 +6,14 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/17 13:33:59 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/28 16:44:14 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS_DIR	=	src/
 
 SRC			=	check_args.c \
+				check_args_utils.c \
 				frees.c \
 				list_utils.c \
 				push_swap.c \
@@ -64,7 +65,10 @@ fclean:			clean
 
 re:				fclean all
 
+test:			all
+				./push_swap 3 2 1 0
+
 norm:
 				@norminette $(SRCS) $(SRCS_DIR)push_swap.h
 
-.PHONY:			all clean fclean re norm
+.PHONY:			all clean fclean re norm test
