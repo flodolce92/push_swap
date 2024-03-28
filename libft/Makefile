@@ -6,11 +6,12 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 19:58:07 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/03/12 03:27:13 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/03/28 16:20:54 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		=	ft_atoi.c \
+				ft_atoll.c \
 				ft_bzero.c \
 				ft_calloc.c \
 				ft_isalnum.c \
