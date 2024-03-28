@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/22 02:05:50 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/28 18:48:59 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ int	main(int argc, char **argv)
 		sa(&ps.stack_a);
 	else if (size == 3)
 		sort_three(&ps.stack_a);
-	// else if (size <= 5)
-	// 	sort_five(&ps.stack_a, &ps.stack_b);
+	else if (size <= 10)
+		sort_ten(&ps.stack_a, &ps.stack_b);
 	// else
 	// 	sort(&ps.stack_a, &ps.stack_b);
 	print_stacks(ps.stack_a, ps.stack_b);
