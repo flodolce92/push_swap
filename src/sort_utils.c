@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:29:20 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/28 18:48:59 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/03/28 20:32:41 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,24 @@ int	is_ordered(t_stack *stack)
 
 void	sort_three(t_stack **stack)
 {
-	t_stack	*first;
 	t_stack	*second;
 	t_stack	*third;
 
-	first = *stack;
-	second = first->next;
+	second = (*stack)->next;
 	third = second->next;
-	if (first->data > second->data)
+	if ((*stack)->data > second->data)
 	{
 		if (second->data > third->data)
 		{
 			sa(stack);
 			rra(stack);
 		}
-		else if (first->data > third->data)
+		else if ((*stack)->data > third->data)
 			ra(stack);
 		else
 			sa(stack);
 	}
-	else if (first->data > third->data)
+	else if ((*stack)->data > third->data)
 		rra(stack);
 	else
 	{
@@ -55,22 +53,6 @@ void	sort_three(t_stack **stack)
 		ra(stack);
 	}
 }
-
-// int	find_index_min(t_stack *stack)
-// {
-// 	t_stack	*current;
-// 	int		min;
-
-// 	current = stack;
-// 	min = current->data;
-// 	while (current)
-// 	{
-// 		if (current->data < min)
-// 			min = current->data;
-// 		current = current->next;
-// 	}
-// 	return (min);
-// }
 
 int	find_index_min(t_stack *stack)
 {
