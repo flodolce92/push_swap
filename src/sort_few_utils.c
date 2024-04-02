@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_utils.c                                       :+:      :+:    :+:   */
+/*   sort_few_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:29:20 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/28 20:32:41 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:03:46 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,10 @@ int	find_index_min(t_stack *stack)
 	return (index_min);
 }
 
-void	sort_ten(t_stack **stack_a, t_stack **stack_b)
+void	sort_ten(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int		index_min;
-	int		size;
 
-	size = stack_size(*stack_a);
 	while (size > 3)
 	{
 		index_min = find_index_min(*stack_a);

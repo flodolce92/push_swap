@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:25 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/28 18:48:59 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:20:03 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,9 @@ void	rrr(t_stack **a, t_stack **b);
 
 int		is_ordered(t_stack *stack);
 void	sort_three(t_stack **stack);
-void	sort_ten(t_stack **a, t_stack **b);
+void	sort_ten(t_stack **a, t_stack **b, int size);
+void	sort_more(t_stack **a, t_stack **b, int size);
+
+int		*to_array(t_stack *stack, int size);
 
 #endif
