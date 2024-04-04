@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/02 19:48:04 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:47:49 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		sort_ten(&ps.stack_a, &ps.stack_b, size);
 	else
 		sort_more(&ps.stack_a, &ps.stack_b, size);
-	print_stacks(ps.stack_a, ps.stack_b);
+	// print_stacks(ps.stack_a, ps.stack_b);
 	free_all(&ps);
 	return (0);
 }

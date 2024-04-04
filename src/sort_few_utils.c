@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:29:20 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/02 19:59:17 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/04 01:42:47 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,9 @@ int	find_index_min(t_stack *stack)
 void	sort_ten(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int		index_min;
+	int		size_bak;
 
+	size_bak = size;
 	while (size > 3)
 	{
 		index_min = find_index_min(*stack_a);
@@ -95,6 +97,6 @@ void	sort_ten(t_stack **stack_a, t_stack **stack_b, int size)
 		size--;
 	}
 	sort_three(stack_a);
-	while (*stack_b)
+	while (3 < size_bak--)
 		pa(stack_a, stack_b);
 }

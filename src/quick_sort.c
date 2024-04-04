@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 19:23:17 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/02 19:24:33 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/03 02:32:05 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,19 @@ static void	quick_sort(int *array, int start, int end)
 	}
 }
 
-static void	print_array(int *array, int size)
-{
-	int	i;
+// static void	print_array(int *array, int size)
+// {
+// 	int	i;
 
-	i = 0;
-	ft_printf("Array: ");
-	while (i < size)
-	{
-		ft_printf("%d ", array[i]);
-		i++;
-	}
-	ft_printf("\n");
-}
+// 	i = 0;
+// 	ft_printf("Array: ");
+// 	while (i < size)
+// 	{
+// 		ft_printf("%d ", array[i]);
+// 		i++;
+// 	}
+// 	ft_printf("\n");
+// }
 
 int	*to_array(t_stack *stack, int size)
 {
@@ -84,6 +84,6 @@ int	*to_array(t_stack *stack, int size)
 		i++;
 	}
 	quick_sort(array, 0, size - 1);
-	print_array(array, size);
+	// print_array(array, size);
 	return (array);
 }
