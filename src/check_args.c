@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/28 16:42:17 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:28:21 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	is_valid_num(char *num)
 		print_error("Empty argument", 1);
 	if (num[i] == '-' || num[i] == '+')
 		i++;
+	if (num[i] == '\0')
+		return (0);
 	while (num[i] != '\0')
 	{
 		if (ft_isdigit(num[i]) == 0)

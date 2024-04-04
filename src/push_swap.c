@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/04 01:47:49 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:18:50 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	main(int argc, char **argv)
 	fill_stack(&ps.stack_a, ps.args, &ps);
 	if(is_ordered(ps.stack_a))
 	{
-		ft_printf("Stack is already ordered\n");
-		print_stacks(ps.stack_a, ps.stack_b);
+		// ft_printf("Stack is already ordered\n");
+		// print_stacks(ps.stack_a, ps.stack_b);
 		free_all(&ps);
 		return (0);
 	}
