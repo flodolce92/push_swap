@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:29:20 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/04 01:42:47 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:44:38 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	find_index_min(t_stack *stack)
 	return (index_min);
 }
 
-void	sort_ten(t_stack **stack_a, t_stack **stack_b, int size)
+void	sort_few(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int		index_min;
 	int		size_bak;

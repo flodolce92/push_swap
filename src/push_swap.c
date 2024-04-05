@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:21:11 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/04 14:18:50 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:48:39 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	init_struct(&ps, argc);
 	check_args(argc, argv, &ps);
 	fill_stack(&ps.stack_a, ps.args, &ps);
-	if(is_ordered(ps.stack_a))
+	if (is_ordered(ps.stack_a))
 	{
 		// ft_printf("Stack is already ordered\n");
 		// print_stacks(ps.stack_a, ps.stack_b);
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	else if (size == 3)
 		sort_three(&ps.stack_a);
 	else if (size <= 10)
-		sort_ten(&ps.stack_a, &ps.stack_b, size);
+		sort_few(&ps.stack_a, &ps.stack_b, size);
 	else
 		sort_more(&ps.stack_a, &ps.stack_b, size);
 	// print_stacks(ps.stack_a, ps.stack_b);
