@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 11:54:38 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/04/04 14:28:21 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:51:00 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ static char	**check_single_arg(char *arg)
 	char	**nums;
 
 	i = 0;
-	if (ft_strlen(arg) == 0)
-		print_error("Empty argument", 1);
 	nums = ft_split(arg, ' ');
+	if (ft_strlen(arg) == 0 || !(*nums))
+		print_error("Empty argument", 1);
 	while (nums[i] != NULL)
 	{
 		if (is_valid_num(nums[i]) == 0)
