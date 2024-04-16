@@ -6,7 +6,7 @@
 #    By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 11:19:31 by flo-dolc          #+#    #+#              #
-#    Updated: 2024/04/05 17:19:31 by flo-dolc         ###   ########.fr        #
+#    Updated: 2024/04/08 22:08:22 by flo-dolc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,12 @@ $(NAME):		$(OBJS_DIR) $(OBJS)
 
 clean:
 				$(RM) $(OBJS)
-#@make -C ./libft clean
+				@make -C ./libft clean
 
 fclean:			clean
 				$(RM) $(NAME)
 				$(RM) -r $(OBJS_DIR)
-#@make -C ./libft fclean
+				@make -C ./libft fclean
 
 re:				fclean all
 
