@@ -6,7 +6,7 @@
 /*   By: flo-dolc <flo-dolc@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 05:49:09 by flo-dolc          #+#    #+#             */
-/*   Updated: 2024/03/12 16:44:39 by flo-dolc         ###   ########.fr       */
+/*   Updated: 2024/04/08 19:45:45 by flo-dolc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ t_stack	*new_node(int number)
 	if (!new)
 		return (NULL);
 	new->data = number;
+	new->index = 0;
+	new->ra = 0;
+	new->rb = 0;
+	new->moves = 0;
 	new->next = NULL;
 	return (new);
 }
